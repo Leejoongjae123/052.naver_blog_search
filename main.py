@@ -150,7 +150,7 @@ def load_excel():
         data_list.append(data)
     print(data_list)
     return data_list
-
+fff
 wb=openpyxl.Workbook()
 ws=wb.active
 column_name=['제품','키워드','카테고리','블로그명','글제목',"URL",'키워드별상위노출개수','순위']
