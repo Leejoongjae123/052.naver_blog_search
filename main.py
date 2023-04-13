@@ -47,8 +47,14 @@ def get_search(keyword):
         'NNB': 'IZBJERH4DQMGI',
         'nx_ssl': '2',
         'ASID': '798f73fa0000018710b1765100000069',
-        '_naver_usersession_': 'TL874wzdVUmzGRcRNe7Lcg==',
-        'page_uid': 'ivR/PlprvmsssUHi6eCssssssSd-400126',
+        'nid_inf': '-1274516378',
+        'NID_AUT': 'Kx9DqsS3w5kHfVyA2eu4NW3efOQoGqcBNsc6MUfDhrwLnduZPt0h1HMwTom9CjbF',
+        'NID_JKL': 'Z1KFAMuKjZTTDe9GZU0Y07X/iShvDFRVmBgHzx8XhNk=',
+        'CBI_SES': 'UHKkf3Nyn+3s8AvSGINPQwZwkSlmVVV1QtjrfGVtAz08V9YJSUpRlpesSMPjpZGPC+7Zs+ww0YKKdKu9yoknvYcPELmiPcsVL0VuZnYDhz52O0AY+jjiw8rFErvZrNNv6T/HGfVB4zu+Sp08kZHce/uL4adnbp1gAeget0aESnr2sRT4YVAOMzIVWbT6D4EzdHHAOZb7I3fAangmCX7FD1D7pUgG94LDBSWQ8r8cuIE9LZzAHrhuKJddggBiDXWEzRUgInq+19ONtk/8Tb5voiw51vIo6AyN8prH5mXwwWkJcK6QAjkxbE0j0OXVFC1WXUZqH0ewY8e76T+T776fNKk7ndQuK1w9gELoZxjqXSeYpoe0rOeiUIKPBxvmenbLBgQ+NkV29yFsW92DQ818KKqb18VlcNS7MiEJ8EzprweqM7fLqeYLUWMoP1wAcEtUT1HnheRaordCTWsy0qEeK9wjN8+aygCSReh/SteGfPM=',
+        'CBI_CHK': '"r5V0mf9uRUZHZ/vmLGy3ez7f4/k4aqWXL5o03eN68foRF6vr8SfxFvlI+85vYVcKrwZpps2gKHNQX+ataQrIUGTL2zldbvohC/hpCypF3S0+KnoaTuvQS9tMcQY/s7igiHMTtUWxrzHciZeb+zA9R40+R7i62MSHerdxtBY9U2g="',
+        '_naver_usersession_': '85Gfh+55TKjLSUCJADtHo6yO',
+        'NID_SES': 'AAABr4CBp99tZ02oWr4x3oSPiApjl+Qsi0mTyPRxX755H1Zzgc7o47kQi3GAH3ahENIZiyHQz4sgwqXkyYhXx5Pe81JILxbD8875itnjReIWc029zsO4RBCThgZDTHrzvQr4vEu8f/WMX1w0e+mZyUH8Cv5bxTfoeIbeUhYUogHWdkzLznqLBETO9WEw6kVexDaqxvFVGPTGVCNa7rLBBUagbr7slMvxM2GBdk75cau57AdgBolm/5xWregn2Q82AeW1M25t1VyXT+5j0zvE8hWNR1XhqWl/f+lXiLmGugT1Ha0+x0+I1JaW23Hn6PvpN9IigKIgUFXXIJ24dnQm8tFkFTvMakUZWL9gchqoNncIH87wtFTKRJ8Zt0292vlVFR5ohe+0UDLQiwTFLcB0zzmnUR0SK5Es5rJRWmyeD4a0/WyEpdBHNKp1gOkv7ks6YKn+MpLaR89aKeo5JdJAp1LA4zFi1M4pnC0599Frhij6BNJE7F6pwnuD5OqyBICFNrV11mnIxoE7ksHxyGTaEJOytxelrWunN3UrJJWYBFADWvn9FAWcWN9pFibVeLOBQJQOoQ==',
+        'page_uid': 'ivQVSdp0J14sstTVkf0ssssstYh-389142',
     }
 
     headers = {
@@ -56,11 +62,12 @@ def get_search(keyword):
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
         'accept-language': 'ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7',
         'cache-control': 'max-age=0',
-        # 'cookie': 'NNB=IZBJERH4DQMGI; nx_ssl=2; ASID=798f73fa0000018710b1765100000069; _naver_usersession_=TL874wzdVUmzGRcRNe7Lcg==; page_uid=ivR/PlprvmsssUHi6eCssssssSd-400126',
+        # 'cookie': 'NNB=IZBJERH4DQMGI; nx_ssl=2; ASID=798f73fa0000018710b1765100000069; nid_inf=-1274516378; NID_AUT=Kx9DqsS3w5kHfVyA2eu4NW3efOQoGqcBNsc6MUfDhrwLnduZPt0h1HMwTom9CjbF; NID_JKL=Z1KFAMuKjZTTDe9GZU0Y07X/iShvDFRVmBgHzx8XhNk=; CBI_SES=UHKkf3Nyn+3s8AvSGINPQwZwkSlmVVV1QtjrfGVtAz08V9YJSUpRlpesSMPjpZGPC+7Zs+ww0YKKdKu9yoknvYcPELmiPcsVL0VuZnYDhz52O0AY+jjiw8rFErvZrNNv6T/HGfVB4zu+Sp08kZHce/uL4adnbp1gAeget0aESnr2sRT4YVAOMzIVWbT6D4EzdHHAOZb7I3fAangmCX7FD1D7pUgG94LDBSWQ8r8cuIE9LZzAHrhuKJddggBiDXWEzRUgInq+19ONtk/8Tb5voiw51vIo6AyN8prH5mXwwWkJcK6QAjkxbE0j0OXVFC1WXUZqH0ewY8e76T+T776fNKk7ndQuK1w9gELoZxjqXSeYpoe0rOeiUIKPBxvmenbLBgQ+NkV29yFsW92DQ818KKqb18VlcNS7MiEJ8EzprweqM7fLqeYLUWMoP1wAcEtUT1HnheRaordCTWsy0qEeK9wjN8+aygCSReh/SteGfPM=; CBI_CHK="r5V0mf9uRUZHZ/vmLGy3ez7f4/k4aqWXL5o03eN68foRF6vr8SfxFvlI+85vYVcKrwZpps2gKHNQX+ataQrIUGTL2zldbvohC/hpCypF3S0+KnoaTuvQS9tMcQY/s7igiHMTtUWxrzHciZeb+zA9R40+R7i62MSHerdxtBY9U2g="; _naver_usersession_=85Gfh+55TKjLSUCJADtHo6yO; NID_SES=AAABr4CBp99tZ02oWr4x3oSPiApjl+Qsi0mTyPRxX755H1Zzgc7o47kQi3GAH3ahENIZiyHQz4sgwqXkyYhXx5Pe81JILxbD8875itnjReIWc029zsO4RBCThgZDTHrzvQr4vEu8f/WMX1w0e+mZyUH8Cv5bxTfoeIbeUhYUogHWdkzLznqLBETO9WEw6kVexDaqxvFVGPTGVCNa7rLBBUagbr7slMvxM2GBdk75cau57AdgBolm/5xWregn2Q82AeW1M25t1VyXT+5j0zvE8hWNR1XhqWl/f+lXiLmGugT1Ha0+x0+I1JaW23Hn6PvpN9IigKIgUFXXIJ24dnQm8tFkFTvMakUZWL9gchqoNncIH87wtFTKRJ8Zt0292vlVFR5ohe+0UDLQiwTFLcB0zzmnUR0SK5Es5rJRWmyeD4a0/WyEpdBHNKp1gOkv7ks6YKn+MpLaR89aKeo5JdJAp1LA4zFi1M4pnC0599Frhij6BNJE7F6pwnuD5OqyBICFNrV11mnIxoE7ksHxyGTaEJOytxelrWunN3UrJJWYBFADWvn9FAWcWN9pFibVeLOBQJQOoQ==; page_uid=ivQVSdp0J14sstTVkf0ssssstYh-389142',
+        'referer': 'https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=%EC%84%B1%EC%9D%B8%ED%8A%9C%EB%B8%8C&oquery=%EC%9A%B4%EB%8F%99%ED%99%94&tqi=ivQjWsprvmZssK1JMQlssssssA4-165254',
         'sec-ch-ua': '"Google Chrome";v="111", "Not(A:Brand";v="8", "Chromium";v="111"',
         'sec-ch-ua-arch': '"x86"',
         'sec-ch-ua-bitness': '"64"',
-        'sec-ch-ua-full-version-list': '"Google Chrome";v="111.0.5563.147", "Not(A:Brand";v="8.0.0.0", "Chromium";v="111.0.5563.147"',
+        'sec-ch-ua-full-version-list': '"Google Chrome";v="111.0.5563.149", "Not(A:Brand";v="8.0.0.0", "Chromium";v="111.0.5563.149"',
         'sec-ch-ua-mobile': '?0',
         'sec-ch-ua-model': '""',
         'sec-ch-ua-platform': '"Windows"',
@@ -68,7 +75,7 @@ def get_search(keyword):
         'sec-ch-ua-wow64': '?0',
         'sec-fetch-dest': 'document',
         'sec-fetch-mode': 'navigate',
-        'sec-fetch-site': 'none',
+        'sec-fetch-site': 'same-origin',
         'sec-fetch-user': '?1',
         'upgrade-insecure-requests': '1',
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36',
@@ -79,7 +86,7 @@ def get_search(keyword):
         'where': 'nexearch',
         'query': str(keyword),
         'oquery': str(keyword),
-        'tqi': 'ivR+Ylp0JXossR45ew4sssssszd-473617',
+        'tqi': 'ivQrxsp0JXVss5LytRVssssst+h-053638',
     }
 
     response = requests.get('https://search.naver.com/search.naver', params=params, cookies=cookies, headers=headers)
@@ -138,7 +145,11 @@ def get_urls(keyword):
                         # print('url:',url)
             else:
                 type_c_url_element = []
-                text = section.find('strong', attrs={'class': 'intent_title'}).get_text()
+                try:
+                    text = section.find('strong', attrs={'class': 'intent_title'}).get_text()
+                except:
+                    print("VIEW타입아님")
+                    continue
                 print('text:', text)
                 if text.find("인플루언서")>=0:
                     contents_cards=section.find_all('a',attrs={'class':'title _intent_cross_collection_trigger'})
@@ -187,193 +198,321 @@ def load_excel(fname):
     print(data_list)
     return data_list
 
-class Thread(QThread):
-    cnt = 0
-    user_signal = pyqtSignal(str)  # 사용자 정의 시그널 2 생성
-    user_signal2 = pyqtSignal()  # 사용자 정의 시그널 2 생성
+# class Thread(QThread):
+#     cnt = 0
+#     user_signal = pyqtSignal(str)  # 사용자 정의 시그널 2 생성
+#     user_signal2 = pyqtSignal()  # 사용자 정의 시그널 2 생성
+#
+#     def __init__(self, parent,fname,time_period):  # parent는 WndowClass에서 전달하는 self이다.(WidnowClass의 인스턴스)
+#         super().__init__(parent)
+#         self.parent = parent  # self.parent를 사용하여 WindowClass 위젯을 제어할 수 있다.
+#         self.fname=fname
+#         self.time_period=time_period
+#
+#     def run(self):
+#         print('엑셀생성')
+#         wb = openpyxl.Workbook()
+#         ws = wb.active
+#         column_name = ['제품', '키워드', '카테고리', '블로그명', '글제목', "URL", '키워드별상위노출개수', '순위']
+#         ws.append(column_name)
+#
+#         time_now_string = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+#         keyword_infos = load_excel(self.fname)  # 키워드가 져오기
+#         time_period = self.time_period
+#
+#         for keyword_info in keyword_infos:
+#             count = 0
+#             time_now_check=datetime.datetime.now().strftime("%H시%M분%S초")
+#             text="상품 : {}, 키워드 : {} 검색중...({})".format(keyword_info[0],keyword_info[1],time_now_check)
+#             self.user_signal.emit(text)
+#             print("keyword:", keyword_info[1])
+#             type_a_urls, type_b_urls, type_c_urls = get_urls(keyword_info[1])  # 키워드에 대한 URL 모두 발췌하기
+#
+#             search_list = ['위크나인', '워크나인', '위트나인', '워터나인']
+#             headers = {
+#                 "User-agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'}
+#             type_a_result = []
+#             type_b_result = []
+#             type_c_result = []
+#
+#             for type_a_url in type_a_urls:
+#                 res = requests.get(type_a_url[2], headers=headers)
+#                 soup = BeautifulSoup(res.text, 'lxml')
+#                 try:
+#                     info_iframe = soup.find('iframe', attrs={'id': 'mainFrame'})['src']
+#                 except:
+#                     print("확인불가블로그")
+#                     continue
+#                 real_url = 'https://blog.naver.com' + soup.find('iframe', attrs={'id': 'mainFrame'})['src']
+#                 print('real_url:', real_url)
+#                 res = requests.get(real_url, headers=headers)
+#                 soup = BeautifulSoup(res.text, 'lxml')
+#                 # print(soup.prettify())
+#                 find_flag = False
+#                 try:
+#                     contents = soup.find('div', attrs={'class': 'se-main-container'}).get_text()
+#                 except:
+#                     print("에러인듯")
+#                     continue
+#                 category = "스마트블록"
+#                 for search_elem in search_list:
+#                     if contents.find(search_elem) >= 0:
+#                         data = [keyword_info[0], keyword_info[1], category, type_a_url[1], type_a_url[3], type_a_url[2],
+#                                 "", type_a_url[0]]
+#                         count = count + 1
+#                         type_a_result.append(data)
+#                 time.sleep(time_period)
+#
+#             for type_b_url in type_b_urls:
+#                 res = requests.get(type_b_url[2], headers=headers)
+#                 soup = BeautifulSoup(res.text, 'lxml')
+#                 try:
+#                     info_iframe = soup.find('iframe', attrs={'id': 'mainFrame'})['src']
+#                 except:
+#                     print("확인불가블로그")
+#                     continue
+#                 real_url = 'https://blog.naver.com' + soup.find('iframe', attrs={'id': 'mainFrame'})['src']
+#                 print('real_url:', real_url)
+#                 res = requests.get(real_url, headers=headers)
+#                 soup = BeautifulSoup(res.text, 'lxml')
+#                 # print(soup.prettify())
+#                 find_flag = False
+#                 try:
+#                     contents = soup.find('div', attrs={'class': 'se-main-container'}).get_text()
+#                 except:
+#                     print("에러인듯")
+#                     continue
+#                 category = "인플루언서탭"
+#                 for search_elem in search_list:
+#                     if contents.find(search_elem) >= 0:
+#                         data = [keyword_info[0], keyword_info[1], category, type_b_url[1], type_b_url[3], type_b_url[2],
+#                                 "", type_b_url[0]]
+#                         count = count + 1
+#                         type_b_result.append(data)
+#                 time.sleep(time_period)
+#
+#             for type_c_url in type_c_urls:
+#                 res = requests.get(type_c_url[2], headers=headers)
+#                 soup = BeautifulSoup(res.text, 'lxml')
+#                 # print(soup.prettify())
+#                 try:
+#                     info_iframe = soup.find('iframe', attrs={'id': 'mainFrame'})['src']
+#                 except:
+#                     print("확인불가블로그")
+#                     continue
+#                 real_url = 'https://blog.naver.com' + soup.find('iframe', attrs={'id': 'mainFrame'})['src']
+#                 print('real_url:', real_url)
+#                 res = requests.get(real_url, headers=headers)
+#                 soup = BeautifulSoup(res.text, 'lxml')
+#                 # print(soup.prettify())
+#                 find_flag = False
+#                 try:
+#                     contents = soup.find('div', attrs={'class': 'se-main-container'}).get_text()
+#                 except:
+#                     print("에러인듯")
+#                     continue
+#                 category = "VIEW"
+#                 for search_elem in search_list:
+#                     if contents.find(search_elem) >= 0:
+#                         data = [keyword_info[0], keyword_info[1], category, type_c_url[1], type_c_url[3], type_c_url[2],
+#                                 "", type_c_url[0]]
+#                         count = count + 1
+#                         type_c_result.append(data)
+#                 time.sleep(time_period)
+#
+#             print('type_a_result:', type_a_result)
+#             print('type_b_result:', type_b_result)
+#             print('type_c_result:', type_c_result)
+#
+#             for type_a_result_elem in type_a_result:
+#                 type_a_result_elem[6] = count
+#                 ws.append(type_a_result_elem)
+#
+#             for type_b_result_elem in type_b_result:
+#                 type_b_result_elem[6] = count
+#                 ws.append(type_b_result_elem)
+#
+#             for type_c_result_elem in type_c_result:
+#                 type_c_result_elem[6] = count
+#                 ws.append(type_c_result_elem)
+#             wb.save('result_{}.xlsx'.format(time_now_string))
+#         self.user_signal2.emit()
+#     def stop(self):
+#         pass
+#
+# class Example(QMainWindow, Ui_MainWindow):
+#     def __init__(self):
+#         super().__init__()
+#         self.path = "C:"
+#         self.index = None
+#         self.setupUi(self)
+#         self.setSlot()
+#         self.show()
+#         self.time_period=float(self.lineEdit.text())
+#         QApplication.processEvents()
+#
+#     def start(self):
+#         print('11')
+#         self.x = Thread(self,self.fname,self.time_period)
+#         self.x.user_signal.connect(self.slot1)  # 사용자 정의 시그널2 슬롯 Connect
+#         self.x.user_signa2.connect(self.slot2)  # 사용자 정의 시그널2 슬롯 Connect
+#         self.x.start()
+#
+#     def slot1(self, data1):  # 사용자 정의 시그널1에 connect된 function
+#         self.textEdit.append(str(data1))
+#
+#     def slot2(self):  # 사용자 정의 시그널1에 connect된 function
+#         QMessageBox.information(self, "완료창", "작업이 완료 되었습니다.")
+#
+#     def find(self):
+#         print("find")
+#         self.fname=QFileDialog.getOpenFileName(self,"Open file",'./')[0]
+#         print(self.fname)
+#         self.lineEdit_2.setText(self.fname)
+#
+#     def setSlot(self):
+#         pass
+#
+#     def setIndex(self, index):
+#         pass
+#
+#     def quit(self):
+#         QCoreApplication.instance().quit()
+#
+#
+# app = QApplication([])
+# ex = Example()
+# sys.exit(app.exec_())
 
-    def __init__(self, parent,fname,time_period):  # parent는 WndowClass에서 전달하는 self이다.(WidnowClass의 인스턴스)
-        super().__init__(parent)
-        self.parent = parent  # self.parent를 사용하여 WindowClass 위젯을 제어할 수 있다.
-        self.fname=fname
-        self.time_period=time_period
-
-    def run(self):
-        print('엑셀생성')
-        wb = openpyxl.Workbook()
-        ws = wb.active
-        column_name = ['제품', '키워드', '카테고리', '블로그명', '글제목', "URL", '키워드별상위노출개수', '순위']
-        ws.append(column_name)
-
-        time_now_string = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-        keyword_infos = load_excel(self.fname)  # 키워드가 져오기
-        time_period = self.time_period
-
-        for keyword_info in keyword_infos:
-            count = 0
-            time_now_check=datetime.datetime.now().strftime("%H시%M분%S초")
-            text="상품 : {}, 키워드 : {} 검색중...({})".format(keyword_info[0],keyword_info[1],time_now_check)
-            self.user_signal.emit(text)
-            print("keyword:", keyword_info[1])
-            type_a_urls, type_b_urls, type_c_urls = get_urls(keyword_info[1])  # 키워드에 대한 URL 모두 발췌하기
-
-            search_list = ['위크나인', '워크나인', '위트나인', '워터나인']
-            headers = {
-                "User-agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'}
-            type_a_result = []
-            type_b_result = []
-            type_c_result = []
-
-            for type_a_url in type_a_urls:
-                res = requests.get(type_a_url[2], headers=headers)
-                soup = BeautifulSoup(res.text, 'lxml')
-                try:
-                    info_iframe = soup.find('iframe', attrs={'id': 'mainFrame'})['src']
-                except:
-                    print("확인불가블로그")
-                    continue
-                real_url = 'https://blog.naver.com' + soup.find('iframe', attrs={'id': 'mainFrame'})['src']
-                print('real_url:', real_url)
-                res = requests.get(real_url, headers=headers)
-                soup = BeautifulSoup(res.text, 'lxml')
-                # print(soup.prettify())
-                find_flag = False
-                try:
-                    contents = soup.find('div', attrs={'class': 'se-main-container'}).get_text()
-                except:
-                    print("에러인듯")
-                    continue
-                category = "스마트블록"
-                for search_elem in search_list:
-                    if contents.find(search_elem) >= 0:
-                        data = [keyword_info[0], keyword_info[1], category, type_a_url[1], type_a_url[3], type_a_url[2],
-                                "", type_a_url[0]]
-                        count = count + 1
-                        type_a_result.append(data)
-                time.sleep(time_period)
-
-            for type_b_url in type_b_urls:
-                res = requests.get(type_b_url[2], headers=headers)
-                soup = BeautifulSoup(res.text, 'lxml')
-                try:
-                    info_iframe = soup.find('iframe', attrs={'id': 'mainFrame'})['src']
-                except:
-                    print("확인불가블로그")
-                    continue
-                real_url = 'https://blog.naver.com' + soup.find('iframe', attrs={'id': 'mainFrame'})['src']
-                print('real_url:', real_url)
-                res = requests.get(real_url, headers=headers)
-                soup = BeautifulSoup(res.text, 'lxml')
-                # print(soup.prettify())
-                find_flag = False
-                try:
-                    contents = soup.find('div', attrs={'class': 'se-main-container'}).get_text()
-                except:
-                    print("에러인듯")
-                    continue
-                category = "인플루언서탭"
-                for search_elem in search_list:
-                    if contents.find(search_elem) >= 0:
-                        data = [keyword_info[0], keyword_info[1], category, type_b_url[1], type_b_url[3], type_b_url[2],
-                                "", type_b_url[0]]
-                        count = count + 1
-                        type_b_result.append(data)
-                time.sleep(time_period)
-
-            for type_c_url in type_c_urls:
-                res = requests.get(type_c_url[2], headers=headers)
-                soup = BeautifulSoup(res.text, 'lxml')
-                # print(soup.prettify())
-                try:
-                    info_iframe = soup.find('iframe', attrs={'id': 'mainFrame'})['src']
-                except:
-                    print("확인불가블로그")
-                    continue
-                real_url = 'https://blog.naver.com' + soup.find('iframe', attrs={'id': 'mainFrame'})['src']
-                print('real_url:', real_url)
-                res = requests.get(real_url, headers=headers)
-                soup = BeautifulSoup(res.text, 'lxml')
-                # print(soup.prettify())
-                find_flag = False
-                try:
-                    contents = soup.find('div', attrs={'class': 'se-main-container'}).get_text()
-                except:
-                    print("에러인듯")
-                    continue
-                category = "VIEW"
-                for search_elem in search_list:
-                    if contents.find(search_elem) >= 0:
-                        data = [keyword_info[0], keyword_info[1], category, type_c_url[1], type_c_url[3], type_c_url[2],
-                                "", type_c_url[0]]
-                        count = count + 1
-                        type_c_result.append(data)
-                time.sleep(time_period)
-
-            print('type_a_result:', type_a_result)
-            print('type_b_result:', type_b_result)
-            print('type_c_result:', type_c_result)
-
-            for type_a_result_elem in type_a_result:
-                type_a_result_elem[6] = count
-                ws.append(type_a_result_elem)
-
-            for type_b_result_elem in type_b_result:
-                type_b_result_elem[6] = count
-                ws.append(type_b_result_elem)
-
-            for type_c_result_elem in type_c_result:
-                type_c_result_elem[6] = count
-                ws.append(type_c_result_elem)
-            wb.save('result_{}.xlsx'.format(time_now_string))
-        self.user_signal2.emit()
-    def stop(self):
-        pass
-
-class Example(QMainWindow, Ui_MainWindow):
-    def __init__(self):
-        super().__init__()
-        self.path = "C:"
-        self.index = None
-        self.setupUi(self)
-        self.setSlot()
-        self.show()
-        self.time_period=float(self.lineEdit.text())
-        QApplication.processEvents()
-
-    def start(self):
-        print('11')
-        self.x = Thread(self,self.fname,self.time_period)
-        self.x.user_signal.connect(self.slot1)  # 사용자 정의 시그널2 슬롯 Connect
-        self.x.user_signa2.connect(self.slot2)  # 사용자 정의 시그널2 슬롯 Connect
-        self.x.start()
-
-    def slot1(self, data1):  # 사용자 정의 시그널1에 connect된 function
-        self.textEdit.append(str(data1))
-
-    def slot2(self):  # 사용자 정의 시그널1에 connect된 function
-        QMessageBox.information(self, "완료창", "작업이 완료 되었습니다.")
-
-    def find(self):
-        print("find")
-        self.fname=QFileDialog.getOpenFileName(self,"Open file",'./')[0]
-        print(self.fname)
-        self.lineEdit_2.setText(self.fname)
-
-    def setSlot(self):
-        pass
-
-    def setIndex(self, index):
-        pass
-
-    def quit(self):
-        QCoreApplication.instance().quit()
 
 
-app = QApplication([])
-ex = Example()
-sys.exit(app.exec_())
+
+import datetime
+import re
+
+import requests
+from bs4 import BeautifulSoup
+import openpyxl
+import time
 
 
+wb=openpyxl.Workbook()
+ws=wb.active
+column_name=['제품','키워드','카테고리','블로그명','글제목',"URL",'키워드별상위노출개수','순위']
+ws.append(column_name)
+
+time_now_string=datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+keyword_infos=load_excel('keyword.xlsx') # 키워드가 져오기
+time_period=0.5
+for keyword_info in keyword_infos:
+    count=0
+    print("keyword:",keyword_info[1])
+    type_a_urls,type_b_urls,type_c_urls=get_urls(keyword_info[1]) #키워드에 대한 URL 모두 발췌하기
+
+    search_list=['위크나인','워크나인','위트나인','워터나인']
+    headers={"User-agent":'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'}
+    type_a_result=[]
+    type_b_result=[]
+    type_c_result=[]
+
+    for type_a_url in type_a_urls:
+        res=requests.get(type_a_url[2],headers=headers)
+        soup=BeautifulSoup(res.text,'lxml')
+        try:
+            info_iframe=soup.find('iframe',attrs={'id':'mainFrame'})['src']
+        except:
+            print("확인불가블로그")
+            continue
+        real_url='https://blog.naver.com'+soup.find('iframe',attrs={'id':'mainFrame'})['src']
+        print('real_url:',real_url)
+        res = requests.get(real_url, headers=headers)
+        soup = BeautifulSoup(res.text, 'lxml')
+        # print(soup.prettify())
+        find_flag=False
+        try:
+            contents=soup.find('div',attrs={'class':'se-main-container'}).get_text()
+        except:
+            print("에러인듯")
+            continue
+        category="스마트블록"
+        for search_elem in search_list:
+            if contents.find(search_elem)>=0:
+                data=[keyword_info[0],keyword_info[1],category,type_a_url[1],type_a_url[3],type_a_url[2],"",type_a_url[0]]
+                count=count+1
+                type_a_result.append(data)
+        time.sleep(time_period)
+
+    for type_b_url in type_b_urls:
+        res=requests.get(type_b_url[2],headers=headers)
+        soup=BeautifulSoup(res.text,'lxml')
+        try:
+            info_iframe=soup.find('iframe',attrs={'id':'mainFrame'})['src']
+        except:
+            print("확인불가블로그")
+            continue
+        real_url='https://blog.naver.com'+soup.find('iframe',attrs={'id':'mainFrame'})['src']
+        print('real_url:',real_url)
+        res = requests.get(real_url, headers=headers)
+        soup = BeautifulSoup(res.text, 'lxml')
+        # print(soup.prettify())
+        find_flag=False
+        try:
+            contents=soup.find('div',attrs={'class':'se-main-container'}).get_text()
+        except:
+            print("에러인듯")
+            continue
+        category="인플루언서탭"
+        for search_elem in search_list:
+            if contents.find(search_elem)>=0:
+                data=[keyword_info[0],keyword_info[1],category,type_b_url[1],type_b_url[3],type_b_url[2],"",type_b_url[0]]
+                count = count + 1
+                type_b_result.append(data)
+        time.sleep(time_period)
+
+    for type_c_url in type_c_urls:
+        res=requests.get(type_c_url[2],headers=headers)
+        soup=BeautifulSoup(res.text,'lxml')
+        # print(soup.prettify())
+        try:
+            info_iframe=soup.find('iframe',attrs={'id':'mainFrame'})['src']
+        except:
+            print("확인불가블로그")
+            continue
+        real_url='https://blog.naver.com'+soup.find('iframe',attrs={'id':'mainFrame'})['src']
+        print('real_url:',real_url)
+        res = requests.get(real_url, headers=headers)
+        soup = BeautifulSoup(res.text, 'lxml')
+        # print(soup.prettify())
+        find_flag=False
+        try:
+            contents=soup.find('div',attrs={'class':'se-main-container'}).get_text()
+        except:
+            print("에러인듯")
+            continue
+        category="VIEW"
+        for search_elem in search_list:
+            if contents.find(search_elem)>=0:
+                data=[keyword_info[0],keyword_info[1],category,type_c_url[1],type_c_url[3],type_c_url[2],"",type_c_url[0]]
+                count = count + 1
+                type_c_result.append(data)
+        time.sleep(time_period)
+
+    print('type_a_result:',type_a_result)
+    print('type_b_result:',type_b_result)
+    print('type_c_result:',type_c_result)
+
+    for type_a_result_elem in type_a_result:
+        type_a_result_elem[6]=count
+        ws.append(type_a_result_elem)
+
+    for type_b_result_elem in type_b_result:
+        type_b_result_elem[6] = count
+        ws.append(type_b_result_elem)
+
+    for type_c_result_elem in type_c_result:
+        type_c_result_elem[6] = count
+        ws.append(type_c_result_elem)
+    wb.save('result_{}.xlsx'.format(time_now_string))
 
 
 
