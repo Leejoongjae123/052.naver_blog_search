@@ -5,6 +5,41 @@ import requests
 from bs4 import BeautifulSoup
 import openpyxl
 import time
+import openpyxl
+import pandas as pd
+from pyautogui import size
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+import subprocess
+import shutil
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from bs4 import BeautifulSoup
+import time
+import datetime
+import pyautogui
+import pyperclip
+import csv
+import sys
+import os
+import math
+import requests
+import re
+import random
+import chromedriver_autoinstaller
+from PyQt5.QtWidgets import QWidget, QApplication, QTreeView, QFileSystemModel, QVBoxLayout, QPushButton, QInputDialog, \
+    QLineEdit, QMainWindow, QMessageBox, QFileDialog
+from PyQt5.QtCore import QCoreApplication
+from selenium.webdriver import ActionChains
+from datetime import datetime, date, timedelta
+import numpy
+import datetime
+from window import Ui_MainWindow
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
 
 
 def get_search(keyword):
@@ -69,6 +104,7 @@ def get_urls(keyword):
             name=""
             try:
                 title=section.find('div',attrs={'class':'title_area'}).get_text()
+                print("text:",title)
             except:
                 title="없음"
 
@@ -134,8 +170,8 @@ def get_urls(keyword):
     print('type_c_urls:',type_c_urls)
 
     return type_a_urls,type_b_urls,type_c_urls
-def load_excel():
-    wb = openpyxl.load_workbook('keyword.xlsx')
+def load_excel(fname):
+    wb = openpyxl.load_workbook(fname)
     ws = wb.active
     no_row = ws.max_row
     print("행갯수:", no_row)
@@ -150,123 +186,195 @@ def load_excel():
         data_list.append(data)
     print(data_list)
     return data_list
-fff
-wb=openpyxl.Workbook()
-ws=wb.active
-column_name=['제품','키워드','카테고리','블로그명','글제목',"URL",'키워드별상위노출개수','순위']
-ws.append(column_name)
 
-time_now_string=datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-keyword_infos=load_excel() # 키워드가 져오기
-time_period=0.5
-for keyword_info in keyword_infos:
-    count=0
-    print("keyword:",keyword_info[1])
-    type_a_urls,type_b_urls,type_c_urls=get_urls(keyword_info[1]) #키워드에 대한 URL 모두 발췌하기
+class Thread(QThread):
+    cnt = 0
+    user_signal = pyqtSignal(str)  # 사용자 정의 시그널 2 생성
+    user_signal2 = pyqtSignal()  # 사용자 정의 시그널 2 생성
 
-    search_list=['위크나인','워크나인','위트나인','워터나인']
-    headers={"User-agent":'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'}
-    type_a_result=[]
-    type_b_result=[]
-    type_c_result=[]
+    def __init__(self, parent,fname,time_period):  # parent는 WndowClass에서 전달하는 self이다.(WidnowClass의 인스턴스)
+        super().__init__(parent)
+        self.parent = parent  # self.parent를 사용하여 WindowClass 위젯을 제어할 수 있다.
+        self.fname=fname
+        self.time_period=time_period
 
-    for type_a_url in type_a_urls:
-        res=requests.get(type_a_url[2],headers=headers)
-        soup=BeautifulSoup(res.text,'lxml')
-        try:
-            info_iframe=soup.find('iframe',attrs={'id':'mainFrame'})['src']
-        except:
-            print("확인불가블로그")
-            continue
-        real_url='https://blog.naver.com'+soup.find('iframe',attrs={'id':'mainFrame'})['src']
-        print('real_url:',real_url)
-        res = requests.get(real_url, headers=headers)
-        soup = BeautifulSoup(res.text, 'lxml')
-        # print(soup.prettify())
-        find_flag=False
-        try:
-            contents=soup.find('div',attrs={'class':'se-main-container'}).get_text()
-        except:
-            print("에러인듯")
-            continue
-        category="스마트블록"
-        for search_elem in search_list:
-            if contents.find(search_elem)>=0:
-                data=[keyword_info[0],keyword_info[1],category,type_a_url[1],type_a_url[3],type_a_url[2],"",type_a_url[0]]
-                count=count+1
-                type_a_result.append(data)
-        time.sleep(time_period)
+    def run(self):
+        print('엑셀생성')
+        wb = openpyxl.Workbook()
+        ws = wb.active
+        column_name = ['제품', '키워드', '카테고리', '블로그명', '글제목', "URL", '키워드별상위노출개수', '순위']
+        ws.append(column_name)
 
-    for type_b_url in type_b_urls:
-        res=requests.get(type_b_url[2],headers=headers)
-        soup=BeautifulSoup(res.text,'lxml')
-        try:
-            info_iframe=soup.find('iframe',attrs={'id':'mainFrame'})['src']
-        except:
-            print("확인불가블로그")
-            continue
-        real_url='https://blog.naver.com'+soup.find('iframe',attrs={'id':'mainFrame'})['src']
-        print('real_url:',real_url)
-        res = requests.get(real_url, headers=headers)
-        soup = BeautifulSoup(res.text, 'lxml')
-        # print(soup.prettify())
-        find_flag=False
-        try:
-            contents=soup.find('div',attrs={'class':'se-main-container'}).get_text()
-        except:
-            print("에러인듯")
-            continue
-        category="인플루언서탭"
-        for search_elem in search_list:
-            if contents.find(search_elem)>=0:
-                data=[keyword_info[0],keyword_info[1],category,type_b_url[1],type_b_url[3],type_b_url[2],"",type_b_url[0]]
-                count = count + 1
-                type_b_result.append(data)
-        time.sleep(time_period)
+        time_now_string = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        keyword_infos = load_excel(self.fname)  # 키워드가 져오기
+        time_period = self.time_period
 
-    for type_c_url in type_c_urls:
-        res=requests.get(type_c_url[2],headers=headers)
-        soup=BeautifulSoup(res.text,'lxml')
-        # print(soup.prettify())
-        try:
-            info_iframe=soup.find('iframe',attrs={'id':'mainFrame'})['src']
-        except:
-            print("확인불가블로그")
-            continue
-        real_url='https://blog.naver.com'+soup.find('iframe',attrs={'id':'mainFrame'})['src']
-        print('real_url:',real_url)
-        res = requests.get(real_url, headers=headers)
-        soup = BeautifulSoup(res.text, 'lxml')
-        # print(soup.prettify())
-        find_flag=False
-        try:
-            contents=soup.find('div',attrs={'class':'se-main-container'}).get_text()
-        except:
-            print("에러인듯")
-            continue
-        category="VIEW"
-        for search_elem in search_list:
-            if contents.find(search_elem)>=0:
-                data=[keyword_info[0],keyword_info[1],category,type_c_url[1],type_c_url[3],type_c_url[2],"",type_c_url[0]]
-                count = count + 1
-                type_c_result.append(data)
-        time.sleep(time_period)
+        for keyword_info in keyword_infos:
+            count = 0
+            time_now_check=datetime.datetime.now().strftime("%H시%M분%S초")
+            text="상품 : {}, 키워드 : {} 검색중...({})".format(keyword_info[0],keyword_info[1],time_now_check)
+            self.user_signal.emit(text)
+            print("keyword:", keyword_info[1])
+            type_a_urls, type_b_urls, type_c_urls = get_urls(keyword_info[1])  # 키워드에 대한 URL 모두 발췌하기
 
-    print('type_a_result:',type_a_result)
-    print('type_b_result:',type_b_result)
-    print('type_c_result:',type_c_result)
+            search_list = ['위크나인', '워크나인', '위트나인', '워터나인']
+            headers = {
+                "User-agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'}
+            type_a_result = []
+            type_b_result = []
+            type_c_result = []
 
-    for type_a_result_elem in type_a_result:
-        type_a_result_elem[6]=count
-        ws.append(type_a_result_elem)
+            for type_a_url in type_a_urls:
+                res = requests.get(type_a_url[2], headers=headers)
+                soup = BeautifulSoup(res.text, 'lxml')
+                try:
+                    info_iframe = soup.find('iframe', attrs={'id': 'mainFrame'})['src']
+                except:
+                    print("확인불가블로그")
+                    continue
+                real_url = 'https://blog.naver.com' + soup.find('iframe', attrs={'id': 'mainFrame'})['src']
+                print('real_url:', real_url)
+                res = requests.get(real_url, headers=headers)
+                soup = BeautifulSoup(res.text, 'lxml')
+                # print(soup.prettify())
+                find_flag = False
+                try:
+                    contents = soup.find('div', attrs={'class': 'se-main-container'}).get_text()
+                except:
+                    print("에러인듯")
+                    continue
+                category = "스마트블록"
+                for search_elem in search_list:
+                    if contents.find(search_elem) >= 0:
+                        data = [keyword_info[0], keyword_info[1], category, type_a_url[1], type_a_url[3], type_a_url[2],
+                                "", type_a_url[0]]
+                        count = count + 1
+                        type_a_result.append(data)
+                time.sleep(time_period)
 
-    for type_b_result_elem in type_b_result:
-        type_b_result_elem[6] = count
-        ws.append(type_b_result_elem)
+            for type_b_url in type_b_urls:
+                res = requests.get(type_b_url[2], headers=headers)
+                soup = BeautifulSoup(res.text, 'lxml')
+                try:
+                    info_iframe = soup.find('iframe', attrs={'id': 'mainFrame'})['src']
+                except:
+                    print("확인불가블로그")
+                    continue
+                real_url = 'https://blog.naver.com' + soup.find('iframe', attrs={'id': 'mainFrame'})['src']
+                print('real_url:', real_url)
+                res = requests.get(real_url, headers=headers)
+                soup = BeautifulSoup(res.text, 'lxml')
+                # print(soup.prettify())
+                find_flag = False
+                try:
+                    contents = soup.find('div', attrs={'class': 'se-main-container'}).get_text()
+                except:
+                    print("에러인듯")
+                    continue
+                category = "인플루언서탭"
+                for search_elem in search_list:
+                    if contents.find(search_elem) >= 0:
+                        data = [keyword_info[0], keyword_info[1], category, type_b_url[1], type_b_url[3], type_b_url[2],
+                                "", type_b_url[0]]
+                        count = count + 1
+                        type_b_result.append(data)
+                time.sleep(time_period)
 
-    for type_c_result_elem in type_c_result:
-        type_c_result_elem[6] = count
-        ws.append(type_c_result_elem)
-    wb.save('result_{}.xlsx'.format(time_now_string))
+            for type_c_url in type_c_urls:
+                res = requests.get(type_c_url[2], headers=headers)
+                soup = BeautifulSoup(res.text, 'lxml')
+                # print(soup.prettify())
+                try:
+                    info_iframe = soup.find('iframe', attrs={'id': 'mainFrame'})['src']
+                except:
+                    print("확인불가블로그")
+                    continue
+                real_url = 'https://blog.naver.com' + soup.find('iframe', attrs={'id': 'mainFrame'})['src']
+                print('real_url:', real_url)
+                res = requests.get(real_url, headers=headers)
+                soup = BeautifulSoup(res.text, 'lxml')
+                # print(soup.prettify())
+                find_flag = False
+                try:
+                    contents = soup.find('div', attrs={'class': 'se-main-container'}).get_text()
+                except:
+                    print("에러인듯")
+                    continue
+                category = "VIEW"
+                for search_elem in search_list:
+                    if contents.find(search_elem) >= 0:
+                        data = [keyword_info[0], keyword_info[1], category, type_c_url[1], type_c_url[3], type_c_url[2],
+                                "", type_c_url[0]]
+                        count = count + 1
+                        type_c_result.append(data)
+                time.sleep(time_period)
+
+            print('type_a_result:', type_a_result)
+            print('type_b_result:', type_b_result)
+            print('type_c_result:', type_c_result)
+
+            for type_a_result_elem in type_a_result:
+                type_a_result_elem[6] = count
+                ws.append(type_a_result_elem)
+
+            for type_b_result_elem in type_b_result:
+                type_b_result_elem[6] = count
+                ws.append(type_b_result_elem)
+
+            for type_c_result_elem in type_c_result:
+                type_c_result_elem[6] = count
+                ws.append(type_c_result_elem)
+            wb.save('result_{}.xlsx'.format(time_now_string))
+        self.user_signal2.emit()
+    def stop(self):
+        pass
+
+class Example(QMainWindow, Ui_MainWindow):
+    def __init__(self):
+        super().__init__()
+        self.path = "C:"
+        self.index = None
+        self.setupUi(self)
+        self.setSlot()
+        self.show()
+        self.time_period=float(self.lineEdit.text())
+        QApplication.processEvents()
+
+    def start(self):
+        print('11')
+        self.x = Thread(self,self.fname,self.time_period)
+        self.x.user_signal.connect(self.slot1)  # 사용자 정의 시그널2 슬롯 Connect
+        self.x.user_signa2.connect(self.slot2)  # 사용자 정의 시그널2 슬롯 Connect
+        self.x.start()
+
+    def slot1(self, data1):  # 사용자 정의 시그널1에 connect된 function
+        self.textEdit.append(str(data1))
+
+    def slot2(self):  # 사용자 정의 시그널1에 connect된 function
+        QMessageBox.information(self, "완료창", "작업이 완료 되었습니다.")
+
+    def find(self):
+        print("find")
+        self.fname=QFileDialog.getOpenFileName(self,"Open file",'./')[0]
+        print(self.fname)
+        self.lineEdit_2.setText(self.fname)
+
+    def setSlot(self):
+        pass
+
+    def setIndex(self, index):
+        pass
+
+    def quit(self):
+        QCoreApplication.instance().quit()
+
+
+app = QApplication([])
+ex = Example()
+sys.exit(app.exec_())
+
+
+
+
 
 
